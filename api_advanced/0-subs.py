@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Script that returns the number of subscribers (not active users, total subscribers) for a given subreddit."""
+
+
+"""Script that returns the number of subscribers (not active users, total subscribers) for a given subreddit.
+"""
 import requests
 
 
