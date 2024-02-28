@@ -2,7 +2,9 @@
 
 
 """
-Script to retrieve the number of subscribers for a given subreddit.
+Script to retrieve the number of subscribers 
+
+for a given subreddit.
 """
 
 import sys
