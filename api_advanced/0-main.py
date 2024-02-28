@@ -1,12 +1,7 @@
 #!/usr/bin/python3
-
-
 """
-Script to retrieve the number of subscribers 
-
-for a given subreddit.
+0-main
 """
-
 import sys
 
 if __name__ == '__main__':
