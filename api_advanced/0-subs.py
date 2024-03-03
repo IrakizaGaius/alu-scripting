@@ -3,16 +3,15 @@
 
 import requests
 
+
 def number_of_subscribers(subreddit):
-    """function to get number_of_subcribers"""
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {'User-Agent': 'PostmanRuntime/7.35.0'}  # Set a custom User-Agent to avoid Too Many Requests error
+    """function that fetches number_of_subscribers"""
+    URL = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    HEADERS = {"User-Agent": "PostmanRuntime/7.35.0"}
 
-    response = requests.get(url, headers=headers)
+    try:
+        RESPONSE = requests.get(URL, headers=HEADERS, allow_redirects=False)
+        return RESPONSE.json().get("data").get("subscribers")
 
-    if response.status_code == 200:
-        data = response.json()
-        subscribers = data['data']['subscribers']
-        return subscribers
-    else:
+    except Exception:
         return 0
