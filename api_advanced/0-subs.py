@@ -10,10 +10,9 @@ def number_of_subscribers(subreddit):
     HEADERS = {"User-Agent": "PostmanRuntime/7.35.0"}
 
     try:
-        
         RESPONSE = requests.get(URL, headers=HEADERS, allow_redirects=False)
         return "OK"
-       # return RESPONSE.json().get("data").get("subscribers")
+        # return RESPONSE.json().get("data").get("subscribers")
 
     except Exception:
         return 0
