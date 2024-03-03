@@ -4,10 +4,7 @@
 import requests
 
 def number_of_subscribers(subreddit):
-    """
-    Function to get number of Subscribers 
-    """
-    
+    """function to get number_of_subcribers"""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {'User-Agent': 'PostmanRuntime/7.35.0'}  # Set a custom User-Agent to avoid Too Many Requests error
 
