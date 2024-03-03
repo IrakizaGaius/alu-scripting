@@ -4,7 +4,7 @@
 import requests
 
 def number_of_subscribers(subreddit):
-    """'
+    """
     Function to get number of Subscribers 
     """
     
