@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""Return the number of subscribers of a given subreddit"""
-
+"""Script that fetch 10 hot post for a given subreddit."""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """function that fetches number_of_subscribers"""
-    URL = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    HEADERS = {"User-Agent": "AlU-School-Project"}
+    """Return the number of subscribers for the given subreddit."""
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {'User-Agent': 'My User Agent 14.976.0'}
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
-    try:
-        RESPONSE = requests.get(URL, headers=HEADERS, allow_redirects=False)
-        return RESPONSE.json().get("data").get("subscribers")
-
-    except Exception:
-        return 0
+    if response.status_code == 200:
+        data = response.json().get('data')
+        if data:
+            return data.get('subscribers', 0)
+    return 0
